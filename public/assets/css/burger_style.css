@@ -1,0 +1,10 @@
+body{
+    font-family: 'Indie Flower', cursive;
+    /* background-image: linear-gradient(to right, green,blue,indigo); */
+    font-size: 30px;
+    color: white;
+    background-color:rgb(87, 0, 128);
+    margin: 0 auto;
+    text-align: center;
+
+}

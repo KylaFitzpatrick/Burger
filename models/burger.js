@@ -1,11 +1,25 @@
-var orm = require("./config/orm.js");
+// Import the ORM to create functions that will interact with the database.
+var orm = require("../config/orm.js");
 
-// Find all the pets ordering by the lowest price to the highest price.
-// orm.selectAndOrder("animal_name", "pets", "price");
+var burger = {
+  all: function(cb) {
+    orm.all("burgers", function(res) {
+      cb(res);
+    });
+  },
+  // The variables cols and vals are arrays.
+  create: function(cols, vals, cb) {
+    orm.create("burgers", cols, vals, function(res) {
+      cb(res);
+    });
+  },
+  update: function(objColVals, condition, cb) {
+    orm.update("burgers", objColVals, condition, function(res) {
+      cb(res);
+    });
+  }
+};
 
-// Find a pet in the parties clients table by an party and client.
-orm.selectWhere("parties", "party_type", "grown-up");
-orm.insertOne("parties", "party_names");
-orm.updateOne("clients", "client_names");
-// Find the buyer with the most pets.
-// orm.findWhoHasMost("buyer_name", "buyer_id", "buyers", "pets");
+// Export the database functions for the controller (burgers_controller.js).
+module.exports = burger;
+

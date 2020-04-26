@@ -1,22 +1,38 @@
-<h1>Burgers!</h1>
+<h1>Eat Vegan Burgers!</h1>
 
-<h2>Choose your burger!</h2>
+<img src="/assets/image/burger.png"></img>
+
+<h2>Burgers devoured!</h2>
 
 <ul>
   {{#each burgers}}
-    
+    {{#unless devoured}}
+      <li>
+	{{burger_name}}
+
+	<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+		{{#if devoured}}{{else}}Devour it!{{/if}}
+	</button>
+</li>
+    {{/unless}}
   {{/each}}
 </ul>
-
-<h2>Cats that are sleepy!</h2>
+<h2>Burgers created!</h2>
 
 <ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
+  {{#each burgers}}
+    {{#if devoured}}
+      <li>
+	{{burger_name}}
+
+	<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+		{{#if devoured}}{{else}}Devour it!{{/if}}
+	</button>
+</li>
     {{/if}}
   {{/each}}
 </ul>
+
 
 <h2>Add a burger</h2>
 <form class="create-form">
@@ -24,10 +40,6 @@
   <div class="form-group">
     <label for="bu">Burger Name:</label>
     <input type="text" id="bu" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="brug">Burger?</label><br>
   </div>
 
   <button type="submit">Add Burger</button>
