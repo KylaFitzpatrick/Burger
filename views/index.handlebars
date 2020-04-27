@@ -2,44 +2,41 @@
 
 <img src="/assets/image/burger.png"></img>
 
-<h2>Burgers devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      <li>
-	{{burger_name}}
-
-	<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-		{{#if devoured}}{{else}}Devour it!{{/if}}
-	</button>
-</li>
-    {{/unless}}
-  {{/each}}
-</ul>
 <h2>Burgers created!</h2>
 
-<ul>
+<div>
   {{#each burgers}}
-    {{#if devoured}}
-      <li>
-	{{burger_name}}
-
-	<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-		{{#if devoured}}{{else}}Devour it!{{/if}}
-	</button>
-</li>
-    {{/if}}
+  {{#unless this.devoured}}
+  <div>
+    <form action="/api/burgers/{{this.id}}" method="POST">
+    {{this.burger_name}}
+    <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour it!</button>
+  </form>
+  </div>
+  {{/unless}}
   {{/each}}
 </ul>
+</div>
+<h2>Burgers devoured!</h2>
+
+<div>
+  {{#each burgers}}
+  {{#if this.devoured}}
+  <div class="burgerDevoured">
+    {{this.burger_name}}
+  </div>
+  {{/if}}
+  {{/each}}
+</div>
 
 
 <h2>Add a burger</h2>
-<form class="create-form">
+<form action="/api/burgers" method="POST">
 
   <div class="form-group">
     <label for="bu">Burger Name:</label>
-    <input type="text" id="bu" name="name">
+    <br>
+    <textarea type="text" id="bu" name="burger_name"></textarea>
   </div>
 
   <button type="submit">Add Burger</button>
