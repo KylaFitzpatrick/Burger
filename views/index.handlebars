@@ -1,10 +1,12 @@
-<h1>Eat Vegan Burgers!</h1>
 
-<img src="/assets/image/burger.png"></img>
 
-<h2>Burgers created!</h2>
 
-<div>
+<h1>Eat-Da-Vegan-Burger!</h1>
+<br>
+<div class="row">
+<div class="col-6">
+  <h2>Burgers created!</h2>
+  
   {{#each burgers}}
   {{#unless this.devoured}}
   <div>
@@ -17,9 +19,10 @@
   {{/each}}
 </ul>
 </div>
+
+<div class="col-6">
 <h2>Burgers devoured!</h2>
 
-<div>
   {{#each burgers}}
   {{#if this.devoured}}
   <div class="burgerDevoured">
@@ -28,16 +31,15 @@
   {{/if}}
   {{/each}}
 </div>
+</div>
 
 
-<h2>Add a burger</h2>
 <form action="/api/burgers" method="POST">
 
   <div class="form-group">
-    <label for="bu">Burger Name:</label>
-    <br>
     <textarea type="text" id="bu" name="burger_name"></textarea>
   </div>
 
-  <button type="submit">Add Burger</button>
+  <button type="button" class="btn btn-primary">Submit</button>
+  <h2>Add a burger you want to eat then click "Submit" button</h2>
 </form>
