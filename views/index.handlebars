@@ -12,7 +12,7 @@
   <div>
     <form action="/api/burgers/{{this.id}}" method="POST">
     {{this.burger_name}}
-    <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour it!</button>
+    <button type="button" class="btn btn-success" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour it!</button>
   </form>
   </div>
   {{/unless}}
@@ -33,7 +33,7 @@
 </div>
 </div>
 
-
+<br>
 <form action="/api/burgers" method="POST">
 
   <div class="form-group">
@@ -41,5 +41,7 @@
   </div>
 
   <button type="button" class="btn btn-primary">Submit</button>
+  <br>
+  <br>
   <h2>Add a burger you want to eat then click "Submit" button</h2>
 </form>
