@@ -8,3 +8,40 @@ body{
     text-align: center;
 
 }
+.change-devoured{
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+.addBurger{
+    background-color: blue;
+    color: white;
+}
+h2{
+    text-align: center;
+}
+.container{
+    width: 1000px;
+}
+.row{
+    width:100%;
+
+justify-content: center;
+margin: 0 auto;
+}
+.col-6{
+    text-align: center;
+}
+
+li{
+    text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+    }
+    img {
+        width: 100%;
+      }
+  }
