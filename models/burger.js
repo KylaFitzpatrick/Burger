@@ -2,10 +2,16 @@
 var orm = require("../config/orm.js");
 
 var burger = {
-  selectAll: function(cb) {
-    orm.selectAll("burgers", function(res) {
-      cb(res);
-    });
+  selectAll: async function() {
+      try{
+        var burgersResponse = await orm.selectAll("burgers")
+      return burgersResponse;  
+      }catch(err){
+          return err;
+      }
+    // orm.selectAll("burgers", function(res) {
+    //   cb(res);
+    // });
   },
   // The variables cols and vals are arrays.
   insertOne: function(cols, vals, cb) {

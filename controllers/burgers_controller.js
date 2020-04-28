@@ -1,16 +1,30 @@
 var express = require("express");
 var router = express.Router();
-var burger = require("../models/burger")
+var burger = require("../models/burger.js")
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
-      var hbsObject = {
-        burgers: data
-      };
-      console.log(hbsObject);
-      res.render("index", hbsObject);
+router.get("/", async function(req, res) {
+    
+    let burgersResponse = await burger.selectAll()
+    // burger.selectAll(function(data) {
+        if (burgersResponse instanceof Error) {
+            res.json({
+                message: "There was an error sending the request"
+            })
+        } else {
+            res.render("index", {
+               burgers: burgersResponse 
+            })
+            console.log(burgersResponse)
+        }
+        
     });
-  });
+
+    //   var hbsObject = {
+    //     burgers: data
+    //   };
+    //   console.log(hbsObject);
+    //   res.render("index", hbsObject);
+   
   
   router.post("/api/burgers", function(req, res) {
     burger.insertOne([
