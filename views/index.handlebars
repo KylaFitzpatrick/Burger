@@ -15,9 +15,11 @@
       {{#each burgers}}
       {{#unless this.devoured}}
       <li>
-        <form action="/api/burgers/{{this.id}}" method="POST">
+        <form  >
           {{this.burger_name}}
-          <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour it!</button>
+
+
+          <button class="change-devoured" data-id="{{id}}"   data-newdevoured="{{devoured}}">Devour it!</button>
         </form>
       </li>
       <br>

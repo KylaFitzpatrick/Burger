@@ -24,7 +24,7 @@ router.get("/", function(req, res) {
     });
   });
   
-  router.post("/api/burgers/:id", function(req, res) {
+  router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
     console.log("condition", condition);
@@ -38,7 +38,7 @@ router.get("/", function(req, res) {
     //   } else {
     //     res.status(200).end();
     //   }
-      res.redirect("/");
+      res.json(result) 
     });
   });
 // Export routes for server.js to use.
