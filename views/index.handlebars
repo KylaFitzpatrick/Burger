@@ -1,66 +1,59 @@
-
 <div class="container">
   <img src="/assets/image/burger.png" class="img-responsive">
-        <br>
-        <br>
-<h1>Eat-Da-Vegan-Burger!</h1>
-<br>
+  <br>
+  <br>
+  <h1>Eat-Da-Vegan-Burger!</h1>
+  <br>
 
-<div class="row">
-  <div class="col-6">
-    <h2>Burgers created!</h2>
-    <br>
-    <div>
-    <ol>
-      {{#each burgers}}
-      {{#unless this.devoured}}
-      <li>
-        <form  >
-          {{this.burger_name}}
-
-
-          <button class="change-devoured" data-id="{{id}}"   data-newdevoured="{{devoured}}">Devour it!</button>
-        </form>
-      </li>
+  <div class="row">
+    <div class="col-6">
+      <h2>Burgers created!</h2>
       <br>
-      {{/unless}}
-      {{/each}}
+      <div>
+        <ol>
+          {{#each burgers}}
+          {{#unless this.devoured}}
+          <li>
+            <form>
+              {{this.burger_name}}
+              <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour it!</button>
+            </form>
+          </li>
+          <br>
+          {{/unless}}
+          {{/each}}
+        </ol>
+      </div>
+    </div>
 
-    </ol>
+
+    <div class="col-6">
+      <h2>Burgers devoured!</h2>
+      <br>
+      <div>
+        <ol>
+          {{#each burgers}}
+          {{#if this.devoured}}
+          <div class="burgerDevoured">
+            <li>
+              {{this.burger_name}}
+            </li>
+          </div>
+          <br>
+          {{/if}}
+          {{/each}}
+        </ol>
+      </div>
     </div>
   </div>
 
 
-  <div class="col-6">
-    <h2>Burgers devoured!</h2>
-    <br>
-<div>
-    <ol>
-    {{#each burgers}}
-    {{#if this.devoured}}
-    <div class="burgerDevoured">
-      <li>
-      {{this.burger_name}}
-      </li>
+  {{!-- <form action="/api/burgers" method="POST"> --}}
+  <form>
+    <div class="form-group">
+      <input type="text" id="bu"></input>
     </div>
-    <br>
-    {{/if}}
-    {{/each}}
-    </ol>
-    </div>
-    
-  </div>
-</div>
-
-
-<form action="/api/burgers" method="POST">
-
-  <div class="form-group">
-    <input type="text" id="bu" name="burger_name"></input>
-  </div>
-
-  <button type="submit" class="addBurger">Submit</button>
-  
-  <h2>Add a burger you want to eat then click "Submit" button</h2>
-</form>
+    <button type="submit" class="addBurger">Submit</button>
+    <h2>Add a burger you want to eat then click "Submit" button</h2>
+  </form>
 </div>
