@@ -34,13 +34,13 @@
         <ol>
           {{#each burgers}}
           {{#if this.devoured}}
-          <div class="burgerDevoured">
+          {{!-- <div class="burgerDevoured"> --}}
             <li>
               {{this.burger_name}}
               	<button class="delete-burger" data-id="{{this.id}}">Delete!</button>
 
             </li>
-          </div>
+          {{!-- </div> --}}
           <br>
           {{/if}}
           {{/each}}

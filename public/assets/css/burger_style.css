@@ -13,15 +13,34 @@ h1{
 }
 .change-devoured{
     background-color: green;
+    border-radius: 5px;
     color: white;
     text-align: center;
 }
+.change-devoured:hover{
+    transition: all 1s ease;
+    background-color: white;
+    color: green;
+}
 .addBurger{
     background-color: blue;
+    border-radius: 5px;
     color: white;
 }
-.burgerDevoured{
-    opacity: 0.5;
+.addBurger:hover{
+    transition: all 1s ease;
+    background-color: white;
+    color: blue;
+}
+.delete-burger{
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+.delete-burger:hover{
+    transition: all 1s ease;
+    background-color: white;
+    color: red;
 }
 h2{
     text-align: center;
