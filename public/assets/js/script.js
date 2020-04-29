@@ -17,9 +17,9 @@ $(".addBurger").on("click", function(event) {
 
     var newBurger = 
     {
-      burger_name: $("#bu").val().trim(),
+      burger_name: $("#bu").val().trim() 
     };
-
+    
     // Send the POST request.
     $.ajax("/api/burgers/", {
      data: newBurger,
@@ -32,6 +32,7 @@ $(".addBurger").on("click", function(event) {
   });
 
   $(".delete-burger").on("click", function(event) {
+    event.preventDefault();
     var id = $(this).data("id");
 
     // Send the DELETE request.
