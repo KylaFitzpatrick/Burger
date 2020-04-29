@@ -26,8 +26,16 @@ var burger = {
       }catch(err){
           return err;
       }
-  }
-};
+  },
+  deleteOne: async function(condition) {
+    try{
+        var burgersResponse = await orm.deleteOne("burgers", condition)
+            return burgersResponse;  
+        }catch(err){
+            return err;
+        }
+    }
+  };
 
 // Export the database functions for the controller (burgers_controller.js).
 module.exports = burger;

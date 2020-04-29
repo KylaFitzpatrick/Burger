@@ -64,5 +64,28 @@ router.get("/", async function(req, res) {
         console.log(burgersResponse)
     }
   });
+
+  router.delete("/api/burgers/:id", async function(req, res) {
+    var condition = "id = " + req.params.id;
+    let burgersResponse = await burger.deleteOne(
+    condition, function(result) {
+      if (result.affectedRows == 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
+    });
+    if (burgersResponse instanceof Error) {
+        res.json({
+            message: "There was an error sending the request"
+        })
+    } else {
+        res.render("index", {
+           burgers: burgersResponse 
+        })
+        console.log(burgersResponse)
+    }
+});
 // Export routes for server.js to use.
 module.exports = router;
