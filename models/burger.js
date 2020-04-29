@@ -9,20 +9,23 @@ var burger = {
       }catch(err){
           return err;
       }
-    // orm.selectAll("burgers", function(res) {
-    //   cb(res);
-    // });
   },
   // The variables cols and vals are arrays.
-  insertOne: function(cols, vals, cb) {
-    orm.insertOne("burgers", cols, vals, function(res) {
-      cb(res);
-    });
+  insertOne: async function(cols, vals) {
+    try{
+        var burgersResponse = await orm.insertOne("burgers", cols, vals)
+      return burgersResponse;  
+      }catch(err){
+          return err;
+      }
   },
-  updateOne: function(objColVals, condition, cb) {
-    orm.updateOne("burgers", objColVals, condition, function(res) {
-      cb(res);
-    });
+  updateOne: async function(objColVals, condition) {
+    try{
+        var burgersResponse = await orm.updateOne("burgers", objColVals, condition)
+      return burgersResponse;  
+      }catch(err){
+          return err;
+      }
   }
 };
 
