@@ -1,8 +1,8 @@
 var mysql = require("mysql");
 var config = require('../../config.js');
 
-if (process.env.PORT) {
-  connection = mysql.createConnection(process.env.PORT)
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL)
 }else{
   connection = mysql.createConnection(config.databaseOptions);
 }
