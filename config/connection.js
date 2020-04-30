@@ -1,8 +1,11 @@
 var mysql = require("mysql");
 var config = require('../config.js');
-var connection = mysql.createConnection(config.databaseOptions);
 
-
+if (process.env.PORT) {
+  connection = mysql.createConnection(process.env.PORT)
+}else{
+  connection = mysql.createConnection(config.databaseOptions);
+}
 
 connection.connect(function(err) {
   if (err) {
