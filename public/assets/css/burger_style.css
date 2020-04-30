@@ -3,13 +3,33 @@ body{
     /* background-image: linear-gradient(to right, green,blue,indigo); */
     font-size: 30px;
     color: white;
-    background-color:rgb(87, 0, 128);
+    background-color:rgb(111, 0, 128);
     margin: 0 auto;
     text-align: center;
 
 }
+.jumbotron{
+    background-color: rgb(0, 94, 255);
+}
+img{
+    margin: 0 auto;
+}
 h1{
     font-weight: bold;
+}
+h2{
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+#created{
+background-color: green;
+}
+#devoured{
+    background-color: red;
+}
+.panel-body{
+    background-color:rgb(111, 0, 128);
 }
 .change-devoured{
     background-color: green;
@@ -27,7 +47,7 @@ h1{
     border-width: 3px;
 }
 .addBurger{
-    background-color: blue;
+    background-color: rgb(0, 94, 255);
     border-radius: 5px;
     color: white;
     border-width: 3px;
@@ -37,8 +57,8 @@ h1{
 .addBurger:hover{
     transition: all 1s ease;
     background-color: white;
-    color: blue;
-    border-color: blue;
+    color: rgb(0, 94, 255);
+    border-color: rgb(0, 94, 255);
     border-width: 3px;
 }
 .delete-burger{
@@ -55,11 +75,11 @@ h1{
     border-color: red;
     border-width: 3px;
 }
-h2{
-    text-align: center;
+#bu{
+    color:rgb(87, 0, 128);
 }
 .container{
-    width: 1000px;
+    width: 100%;
 }
 .row{
     width:100%;
