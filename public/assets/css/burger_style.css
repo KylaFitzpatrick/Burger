@@ -3,7 +3,7 @@ body{
     /* background-image: linear-gradient(to right, green,blue,indigo); */
     font-size: 30px;
     color: white;
-    background-color:rgb(111, 0, 128);
+    background-color:rgb(104, 20, 97);
     margin: 0 auto;
     text-align: center;
 
@@ -23,16 +23,16 @@ h2{
     text-align: center;
 }
 #created{
-background-color: green;
+background-color: rgb(43, 173, 43);
 }
 #devoured{
-    background-color: red;
+    background-color: rgb(237, 51, 51);
 }
 .panel-body{
-    background-color:rgb(111, 0, 128);
+    background-color:rgb(104, 20, 97);
 }
 .change-devoured{
-    background-color: green;
+    background-color: rgb(43, 173, 43);
     border-radius: 5px;
     color: white;
     text-align: center;
@@ -42,8 +42,8 @@ background-color: green;
 .change-devoured:hover{
     transition: all 1s ease;
     background-color: white;
-    color: green;
-    border-color: green;
+    color: rgb(43, 173, 43);
+    border-color: rgb(43, 173, 43);
     border-width: 3px;
 }
 .addBurger{
@@ -62,7 +62,7 @@ background-color: green;
     border-width: 3px;
 }
 .delete-burger{
-    background-color: red;
+    background-color: rgb(237, 51, 51);
     border-radius: 5px;
     color: white;
     border-width: 3px;
@@ -71,12 +71,12 @@ background-color: green;
 .delete-burger:hover{
     transition: all 1s ease;
     background-color: white;
-    color: red;
-    border-color: red;
+    color: rgb(237, 51, 51);
+    border-color: rgb(237, 51, 51);
     border-width: 3px;
 }
 #bu{
-    color:rgb(87, 0, 128);
+    color:rgb(104, 20, 97);
 }
 .container{
     width: 100%;
