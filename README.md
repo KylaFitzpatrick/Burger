@@ -1,4 +1,5 @@
-# Burger
+# Vegan Burger
+![Vegan Burger](public/assets/image/veganburger.png)
 
 ### About the app (i.e. what is it doing and why)
  This is burger logger app with MySQL, Node, Express, Handlebars and a homemade ORM. This app uses MVC design pattern Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
@@ -27,7 +28,7 @@ Run steps 1-4 to play the Eat-Da-Vegan-Burger:
 
 ### Contain a link to a deployed version of the app
 
-Repository: https://github.com/KylaFitzpatrick/Burger
+Deployed: https://eat-da-vegan-burger.herokuapp.com/
 
 ### Clearly list the technologies used in the app
 
